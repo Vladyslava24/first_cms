@@ -1,0 +1,124 @@
+/*--------КОНТАКТИ---------*/
+.contact-container {
+    background: #04313C;
+    padding: 70px 70px 70px;
+    color: #fff;
+    display: flex;
+}
+.contact-info-div, .contact-div {
+    flex: 50%;
+}
+.contact-info-div h3{
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+.contact-info-div p {
+    font-size: 15px;
+    padding-right: 40px;
+    line-height: 30px;
+}
+ul {
+    list-style: none;
+}
+.contact-info-block {
+    display: flex;
+}
+.contact-info-block .names {
+    font-size: 20px;
+    font-weight: 800;
+    padding: 5px 10px 5px 0;
+}
+.contact-info-block .names li {
+    padding: 20px 0;
+    text-align:left;
+}
+.contact-info-block .subjects {
+    padding-left: 20px;
+}
+.contact-info-block .subjects li {
+    text-align: left;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.contact-info-block .second {
+    padding: 17px;
+}
+.contact-info-block svg {
+    text-align: center;
+}
+.btn-social-media svg {
+    margin: 40px 0 10px;
+}
+.login-div textarea {
+    background: rgba(6, 129, 159, 0.16);
+    border: none;
+    margin: 5px 0 40px;
+    font-size: 14px;
+}
+.login-div.contact {
+    padding: 40px 40px 70px;
+}
+.btn-send {
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: auto;
+}
+#subject {
+    margin-bottom: 30px;
+}
+.btn-send:hover {
+    cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-info-block {
+        justify-content: center;
+    }
+    .contact-info-div {
+        margin-bottom: 40px;
+    }
+    .login-div.contact {
+        width: 100%;
+    }
+    .contact-info-div p {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 560px) {
+    .contact-container {
+        padding: 20px;
+        padding-bottom: 40px;
+    }
+    .subjects {
+        padding-left: 0;
+    }
+    .names li{
+        font-size: 15px;
+    }
+    .contact-info-block .subjects li {
+        font-size: 14px;
+        padding-left: 10px;
+    }
+    .contact-info-block .names {
+        padding: 10px;
+    }
+    .contact-info-block .subjects {
+        padding: 0;
+    }
+}
+
+form {
+    padding: 10px;
+    width: 82vw;
+    margin: auto;
+    text-align: center;
+}
+
+.form-group{
+    text-align: left;
+}

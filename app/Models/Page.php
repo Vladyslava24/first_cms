@@ -9,6 +9,10 @@ class Page extends Model
 {
     use HasFactory;
 
+    public function getByAlias($alias){
+        return $this->where('alias', $alias)->first();
+    }
+
     public function render(){
         $page = new Page();
         return view('main', ['data' => $page->where('parent_code', '=', '1')->get()]);

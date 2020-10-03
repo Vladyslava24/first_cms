@@ -23,8 +23,6 @@
             <span class="item">Свитшоты, футболки, юбки, тренчи,<br>
             джинсы, шарфы, сумки, блокноты</span>
         </div>
-            </span>
-        </div>
     </div>
 
     <div class="container content">
