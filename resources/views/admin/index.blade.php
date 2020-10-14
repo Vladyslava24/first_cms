@@ -14,6 +14,11 @@
         </div>
 
         <div class="form-group">
+            <label for="caption">Category</label>
+            <input type="text" name="caption" value="{{ old('caption') }}" placeholder="Введите категорию товара" id="caption" class="form-control">
+        </div>
+
+        <div class="form-group">
             <label for="content">Main Content</label>
             <input type="text" name="main_content" value="{{ old('main_content') }}" placeholder="Введите название товара" id="name" class="form-control">
         </div>
@@ -39,7 +44,7 @@
                     </div>
                     <div>
                         <a href="{{route('note-update', $el->id)}}"><button class="btn btn-outline-dark">Редактировать</button></a>
-                        <a href="{{ route('note-delete', $el->id) }}"><button class="btn btn-outline-danger">Удалить</button></a>
+                        <a href="{{route('note-delete', $el->id) }}"><button class="btn btn-outline-danger">Удалить</button></a>
                     </div>
                 </div>
             @endforeach

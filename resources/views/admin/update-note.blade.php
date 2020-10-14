@@ -15,6 +15,11 @@
         </div>
 
         <div class="form-group">
+            <label for="caption">Category</label>
+            <input type="text" name="caption" value="{{ old('caption') }}" placeholder="Введите категорию товара" id="caption" class="form-control">
+        </div>
+
+        <div class="form-group">
             <label for="content">Main Content</label>
             <input type="text" name="main_content" value="{{ old('main_content') }}" placeholder="Enter your main content" id="name" class="form-control">
         </div>

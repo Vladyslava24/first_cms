@@ -765,3 +765,67 @@ body, html {
 .space{
     height:200px;
 }
+
+/*Styles for category*/
+
+.content_category .row div{
+    margin-top: 40px;
+    width: 530px;
+    height: 400px;
+    text-align: center;
+}
+
+.title_category{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.category{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.head_category{
+    position: relative;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 64px;
+    top: 50px;
+    /*left: 25%;*/
+
+    color: #FFFFFF;
+
+    -webkit-text-stroke: 1px black;
+}
+
+.button_category{
+    position: relative;
+    width: 307px;
+    height: 75px;
+    /*right: 20%;*/
+
+    top: 170px;
+
+    background: #D80D0D;
+    border-radius: 50px;
+}
+
+.button_category:hover{
+    background: darkred;
+    width: 327px;
+    height: 95px;
+    top: 160px;
+}
+
+.button_category span{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 42px;
+
+    color: #FFFFFF;
+}

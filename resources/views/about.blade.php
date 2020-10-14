@@ -11,9 +11,8 @@
     <div class="container content">
         <div class="text">
             <br>
-            @foreach($data as $el)
-            <span class="title2">{{$el->caption}}</span>
-            @endforeach<br><br>
+            <span class="title2">О нас</span>
+            <br><br>
             <span class="text">
                 @foreach($data as $el)
                     {{$el->main_content}}

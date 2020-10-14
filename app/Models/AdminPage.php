@@ -12,5 +12,4 @@ class AdminPage extends Model
     public function getByAlias($alias){
         return $this->where('alias', $alias)->first();
     }
-
 }

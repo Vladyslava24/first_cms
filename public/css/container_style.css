@@ -260,3 +260,21 @@ body {
         font-size: 12px;
     }
 }
+
+/*Styles for sorting*/
+.category_container{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sort_type{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    text-align: center;
+
+}
