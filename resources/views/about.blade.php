@@ -21,4 +21,22 @@
         </span>
         </div>
     </div>
+    <link rel="stylesheet" href="/css/container_style.css">
+    <div class="action" id="items">Акционные товары!</div>
+    <div class="container">
+        <div class="cards">
+            @foreach($page as $el)
+                <div class="card">
+                    <div class="card_img">
+                        <img src="images/{{$el->image}}">
+                    </div>
+                    <div class="card_text">
+                        <div class="card_title">{{$el->main_content}}</div>
+                        <div class="card_price">{{$el->price}}</div>
+                    </div>
+                    <a class="button2" href="{{route ('sweatshirt')}}">подивитись товар</a>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @endsection

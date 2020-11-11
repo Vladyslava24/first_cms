@@ -18,11 +18,15 @@ class PageModel extends Model
 
     public function renderAbout(){
         $page = new PageModel();
-        return view('about', ['data' => $page->where('caption', '=', 'about')->get()]);
+        return view('about', ['data' => $page->where('caption', '=', 'about')->get(),
+            'page' =>  $page->where('alias_of', '<>', 'NULL')
+                            ->where('caption', '=', 'sweatshirt')
+                            ->where('content_type', '=', 'ad')->get()]);
     }
 
     public function renderSweatshirt(){
         $page = new PageModel();
-        return view('sweatshirt', ['data' => $page->where('caption', '=', 'sweatshirt')->get()]);
+        return view('sweatshirt', ['data' => $page->where('alias_of', '<>', 'NULL')
+                                                       ->where('caption', '=', 'sweatshirt')->get()]);
     }
 }

@@ -15,12 +15,14 @@ class IndexController extends Controller
 {
     public function index(){
         $page = new PageModel();
-        return view('admin.index', ['page' => $page->where('caption', '=', 'sweatshirt')->get()]);
+        return view('admin.index', ['page' =>  $page->whereNull('alias_of')
+                                                         ->where('caption', '=', 'sweatshirt')->get()]);
     }
 
     public function viewPage(){
         $page = new PageModel();
-        return view('admin.view', ['data' => $page->where('caption', '=', 'sweatshirt')->get()]);
+        return view('admin.view', ['data' => $page->where('alias_of', '<>', 'NULL')
+                                                       ->where('caption', '=', 'sweatshirt')->get()]);
     }
 
     public function insert(Request $request){
@@ -33,15 +35,27 @@ class IndexController extends Controller
         $page = new PageModel();
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
-        //$page->getByAlias('index');
         $page->image = $imageName;
         $page->caption = $request->get('caption');
         $page->main_content = $request->get('main_content');
         $page->price = $request->get('price');
+        $page->content_type = $request->get('content_type');
         $page->parent_code=2;
         $page->save();
+        $aliasPage = new PageModel();
+        $aliasPage->alias_of = $page->id;
+        if($aliasPage->alias_of != null){
+            $aliasPage->image = $page->image;
+            $aliasPage->caption = $page->caption;
+            $aliasPage->main_content = $page->main_content;
+            $aliasPage->price = $page->price;
+            $aliasPage->content_type = $page->content_type;
+            $aliasPage->parent_code = $page->parent_code;
+        }
+        $aliasPage->save();
         return back()->with('success', 'Product was added to page!');
     }
+
 
     public function updateNote($id){
         $page = new PageModel();
@@ -63,8 +77,21 @@ class IndexController extends Controller
         $page->caption = $request->get('caption');
         $page->main_content = $request->get('main_content');
         $page->price = $request->get('price');
+        $page->content_type = $request->get('content_type');
         $page->parent_code=2;
         $page->save();
+        $aliasPage = new PageModel();
+        //$aliasPage = PageModel::where('alias_of', '=', $page->id)->get();
+        $aliasPage->alias_of = $page->id;
+        if($aliasPage->alias_of != null){
+            $aliasPage->image = $page->image;
+            $aliasPage->caption = $page->caption;
+            $aliasPage->main_content = $page->main_content;
+            $aliasPage->price = $page->price;
+            $aliasPage->content_type = $page->content_type;
+            $aliasPage->parent_code = $page->parent_code;
+        }
+        $aliasPage->save();
         return redirect()->route('admin-index')->with('success',
             'Product was updated');
     }

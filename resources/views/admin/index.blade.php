@@ -27,6 +27,11 @@
             <label for="price">Price</label>
             <input type="text" name="price" value="{{ old('price') }}" placeholder="Введите цену" id="price" class="form-control">
         </div>
+
+        <div class="form-group">
+            <label for="content_type">Content type</label>
+            <input type="text" name="content_type" value="{{ old('content_type') }}" placeholder="Введите тип контенту" id="content_type" class="form-control">
+        </div>
         <button type="submit" class="btn btn-success">Подтвердить</button>
     </form>
 
